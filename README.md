@@ -25,4 +25,21 @@ To compile the SDK and run the demo:
 3. Run CMake: `cmake ..`
 4. Build the project: `make`
 5. Run the demo: `./SentinelDemo`
-6. 
+6. ⚙️ Technical Requirements 
+Project: SentinelGuard-SDK Implementation Guide
+To deploy the SentinelGuard-SDK in a production environment, the following hardware and software specifications are required to ensure full cryptographic integrity:
+🔹 Minimum Hardware (Embedded Systems)
+Processor: MCU/MPU with Hardware Security Module (HSM) or TPM support (e.g., STM32H7, ESP32-S3, or high-performance ARM Cortex-M/A cores).
+Security Features: Support for TrustZone or Secure Enclave to isolate cryptographic keys.
+Sensors: * GPS Module: Required for Real-time Geofencing.
+Biometrics: Fingerprint or Palm-vein scanner for user ID.
+IMU: G-force/Accelerometer for tamper detection.
+Actuator: A dedicated Solenoid or Firing Pin Actuator connected via a Secure-GPIO.
+Memory/Storage: * RAM: 256KB+ | Flash: 1MB+.
+Storage: Secure EEPROM or encrypted flash for logging.
+🔹 Software Environment
+Language Standard: C++17 (for modern security features and memory safety).
+Operating System: Bare-metal, FreeRTOS, or Embedded Linux.
+Toolchain: Modern GCC (v9+) or Clang.
+Build System: CMake 3.10 or higher.
+⚠️ Critical Security Note: For maximum protection against side-channel attacks, all cryptographic operations should be executed within the hardware's secure execution environment.
